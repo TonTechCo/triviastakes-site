@@ -1,0 +1,19 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["VL2XNF23MC.com.tontech.triviastakes"],
+        "components": [
+          {
+            "/": "/t/*",
+            "comment": "Community topic invite links (canonical share URL)"
+          },
+          {
+            "/": "/topic/*",
+            "comment": "Community topic links (custom-scheme path parity)"
+          }
+        ]
+      }
+    ]
+  }
+}
