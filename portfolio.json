@@ -1,0 +1,55 @@
+{
+  "_note": "Self-promo portfolio served at SITE_BASE/portfolio.json. The app fetches this at launch (24h cache, falls back to the bundled fixture offline). Edit + redeploy to change the cross-promo apps without an app release. TODO(Rafi): replace each store_url_ios id__APPSTORE_ID__ with the real numeric App Store id, and point icon_url at real hosted icons.",
+  "fetched_at": 0,
+  "exclude_self": true,
+  "apps": [
+    {
+      "app_id": "com.tontech.toolbox",
+      "display_name": "Toolbox",
+      "tagline": "Everyday utilities, beautifully simple.",
+      "icon_url": "https://tontechco.github.io/triviastakes-site/promo/toolbox.png",
+      "screenshots": [],
+      "store_url_ios": "https://apps.apple.com/app/id__APPSTORE_ID__",
+      "store_url_android": "https://play.google.com/store/apps/details?id=com.tontech.toolbox",
+      "primary_color": "#F2A93B",
+      "category": "utility",
+      "placement_priority": 10
+    },
+    {
+      "app_id": "com.tontech.sagaword",
+      "display_name": "Sagaword",
+      "tagline": "A word adventure a day.",
+      "icon_url": "https://tontechco.github.io/triviastakes-site/promo/sagaword.png",
+      "screenshots": [],
+      "store_url_ios": "https://apps.apple.com/app/id__APPSTORE_ID__",
+      "store_url_android": "https://play.google.com/store/apps/details?id=com.tontech.sagaword",
+      "primary_color": "#7E5FFF",
+      "category": "word_game",
+      "placement_priority": 9
+    },
+    {
+      "app_id": "com.tontech.techempires",
+      "display_name": "Tech Empires",
+      "tagline": "Build your tech dynasty.",
+      "icon_url": "https://tontechco.github.io/triviastakes-site/promo/techempires.png",
+      "screenshots": [],
+      "store_url_ios": "https://apps.apple.com/app/id__APPSTORE_ID__",
+      "store_url_android": "https://play.google.com/store/apps/details?id=com.tontech.techempires",
+      "primary_color": "#2EB97A",
+      "category": "game",
+      "placement_priority": 8
+    },
+    {
+      "app_id": "com.tontech.blockblitz",
+      "display_name": "Block Blitz",
+      "tagline": "Fast, addictive block puzzles.",
+      "icon_url": "https://tontechco.github.io/triviastakes-site/promo/blockblitz.png",
+      "screenshots": [],
+      "store_url_ios": "https://apps.apple.com/app/id__APPSTORE_ID__",
+      "store_url_android": "https://play.google.com/store/apps/details?id=com.tontech.blockblitz",
+      "primary_color": "#FF6B6B",
+      "category": "puzzle",
+      "placement_priority": 7
+    }
+  ]
+}
