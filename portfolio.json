@@ -1,54 +1,42 @@
 {
-  "_note": "Self-promo portfolio served at SITE_BASE/portfolio.json. The app fetches this at launch (24h cache, falls back to the bundled fixture offline). Edit + redeploy to change the cross-promo apps without an app release. TODO(Rafi): replace each store_url_ios id__APPSTORE_ID__ with the real numeric App Store id, and point icon_url at real hosted icons.",
+  "_note": "Self-promo portfolio served at SITE_BASE/portfolio.json. The app fetches this at launch (24h cache, falls back to the bundled fixture offline). Edit + redeploy to change the cross-promo apps without an app release. iOS uses the live App Store URLs + Apple-hosted icons. store_url_android values are best-guess Play package URLs (TonTech reuses package names) — verify/replace once these apps are on Google Play.",
   "fetched_at": 0,
   "exclude_self": true,
   "apps": [
     {
-      "app_id": "com.tontech.toolbox",
-      "display_name": "Toolbox",
-      "tagline": "Everyday utilities, beautifully simple.",
-      "icon_url": "https://tontechco.github.io/triviastakes-site/promo/toolbox.png",
-      "screenshots": [],
-      "store_url_ios": "https://apps.apple.com/app/id__APPSTORE_ID__",
-      "store_url_android": "https://play.google.com/store/apps/details?id=com.tontech.toolbox",
-      "primary_color": "#F2A93B",
-      "category": "utility",
-      "placement_priority": 10
-    },
-    {
       "app_id": "com.tontech.sagaword",
       "display_name": "Sagaword",
       "tagline": "A word adventure a day.",
-      "icon_url": "https://tontechco.github.io/triviastakes-site/promo/sagaword.png",
+      "icon_url": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/06/5e/8d/065e8d66-4c07-0459-fc42-b2bb87a36313/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/512x512bb.jpg",
       "screenshots": [],
-      "store_url_ios": "https://apps.apple.com/app/id__APPSTORE_ID__",
+      "store_url_ios": "https://apps.apple.com/us/app/sagaword/id6768200106",
       "store_url_android": "https://play.google.com/store/apps/details?id=com.tontech.sagaword",
       "primary_color": "#7E5FFF",
       "category": "word_game",
-      "placement_priority": 9
-    },
-    {
-      "app_id": "com.tontech.techempires",
-      "display_name": "Tech Empires",
-      "tagline": "Build your tech dynasty.",
-      "icon_url": "https://tontechco.github.io/triviastakes-site/promo/techempires.png",
-      "screenshots": [],
-      "store_url_ios": "https://apps.apple.com/app/id__APPSTORE_ID__",
-      "store_url_android": "https://play.google.com/store/apps/details?id=com.tontech.techempires",
-      "primary_color": "#2EB97A",
-      "category": "game",
-      "placement_priority": 8
+      "placement_priority": 10
     },
     {
       "app_id": "com.tontech.blockblitz",
-      "display_name": "Block Blitz",
+      "display_name": "Block Blitzer",
       "tagline": "Fast, addictive block puzzles.",
-      "icon_url": "https://tontechco.github.io/triviastakes-site/promo/blockblitz.png",
+      "icon_url": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/3c/9b/d4/3c9bd465-63d3-1067-a0f9-1f4a6e5e46d9/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/512x512bb.jpg",
       "screenshots": [],
-      "store_url_ios": "https://apps.apple.com/app/id__APPSTORE_ID__",
+      "store_url_ios": "https://apps.apple.com/us/app/block-blitzer/id6769752023",
       "store_url_android": "https://play.google.com/store/apps/details?id=com.tontech.blockblitz",
       "primary_color": "#FF6B6B",
       "category": "puzzle",
+      "placement_priority": 9
+    },
+    {
+      "app_id": "com.tontech.flashlightcompass",
+      "display_name": "RGB Light, Level & AI Analyzer",
+      "tagline": "Light meter, level & color tools.",
+      "icon_url": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/27/8d/72/278d72ce-cbfd-3438-5626-1547b04d7070/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/512x512bb.jpg",
+      "screenshots": [],
+      "store_url_ios": "https://apps.apple.com/us/app/rgb-light-level-ai-analyzer/id6762223603",
+      "store_url_android": "https://play.google.com/store/apps/details?id=com.tontech.flashlightcompass",
+      "primary_color": "#4DA3FF",
+      "category": "utility",
       "placement_priority": 7
     }
   ]
