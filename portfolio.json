@@ -28,6 +28,18 @@
       "placement_priority": 9
     },
     {
+      "app_id": "com.tontech.techwars",
+      "display_name": "Tech Empires",
+      "tagline": "Build your tech empire.",
+      "icon_url": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/ee/1d/ac/ee1dac58-b6eb-ec79-4aac-9c8d6036179d/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg",
+      "screenshots": [],
+      "store_url_ios": "https://apps.apple.com/us/app/tech-empires/id6766650540",
+      "store_url_android": "https://play.google.com/store/apps/details?id=com.tontech.techwars",
+      "primary_color": "#2EB97A",
+      "category": "game",
+      "placement_priority": 8
+    },
+    {
       "app_id": "com.tontech.flashlightcompass",
       "display_name": "RGB Light, Level & AI Analyzer",
       "tagline": "Light meter, level & color tools.",
