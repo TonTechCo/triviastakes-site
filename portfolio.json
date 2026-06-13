@@ -1,8 +1,20 @@
 {
-  "_note": "Self-promo portfolio served at SITE_BASE/portfolio.json. The app fetches this at launch (24h cache, falls back to the bundled fixture offline). Edit + redeploy to change the cross-promo apps without an app release. iOS uses the live App Store URLs + Apple-hosted icons. store_url_android values are best-guess Play package URLs (TonTech reuses package names) — verify/replace once these apps are on Google Play.",
+  "_note": "Self-promo portfolio served at SITE_BASE/portfolio.json. iOS uses live App Store URLs. store_url_android is intentionally EMPTY for now (no TonTech apps on Google Play yet) — cross-promo is hidden per-platform when the store_url for the current platform is empty (selectAppForPlacement). Add a real Play URL here + redeploy once an app is live on Android.",
   "fetched_at": 0,
   "exclude_self": true,
   "apps": [
+    {
+      "app_id": "com.tontech.triviastakes",
+      "display_name": "Trivia Stakes",
+      "tagline": "Wager what you know.",
+      "icon_url": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/22/51/04/2251041d-0347-ceae-7e4b-f64570cc4ad2/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/512x512bb.jpg",
+      "screenshots": [],
+      "store_url_ios": "https://apps.apple.com/us/app/trivia-stakes/id6772572727",
+      "store_url_android": "",
+      "primary_color": "#E9B949",
+      "category": "trivia",
+      "placement_priority": 11
+    },
     {
       "app_id": "com.tontech.sagaword",
       "display_name": "Sagaword",
@@ -10,7 +22,7 @@
       "icon_url": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/06/5e/8d/065e8d66-4c07-0459-fc42-b2bb87a36313/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/512x512bb.jpg",
       "screenshots": [],
       "store_url_ios": "https://apps.apple.com/us/app/sagaword/id6768200106",
-      "store_url_android": "https://play.google.com/store/apps/details?id=com.tontech.sagaword",
+      "store_url_android": "",
       "primary_color": "#7E5FFF",
       "category": "word_game",
       "placement_priority": 10
@@ -22,7 +34,7 @@
       "icon_url": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/3c/9b/d4/3c9bd465-63d3-1067-a0f9-1f4a6e5e46d9/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/512x512bb.jpg",
       "screenshots": [],
       "store_url_ios": "https://apps.apple.com/us/app/block-blitzer/id6769752023",
-      "store_url_android": "https://play.google.com/store/apps/details?id=com.tontech.blockblitz",
+      "store_url_android": "",
       "primary_color": "#FF6B6B",
       "category": "puzzle",
       "placement_priority": 9
@@ -34,7 +46,7 @@
       "icon_url": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/ee/1d/ac/ee1dac58-b6eb-ec79-4aac-9c8d6036179d/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg",
       "screenshots": [],
       "store_url_ios": "https://apps.apple.com/us/app/tech-empires/id6766650540",
-      "store_url_android": "https://play.google.com/store/apps/details?id=com.tontech.techwars",
+      "store_url_android": "",
       "primary_color": "#2EB97A",
       "category": "game",
       "placement_priority": 8
@@ -46,7 +58,7 @@
       "icon_url": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/27/8d/72/278d72ce-cbfd-3438-5626-1547b04d7070/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/512x512bb.jpg",
       "screenshots": [],
       "store_url_ios": "https://apps.apple.com/us/app/rgb-light-level-ai-analyzer/id6762223603",
-      "store_url_android": "https://play.google.com/store/apps/details?id=com.tontech.flashlightcompass",
+      "store_url_android": "",
       "primary_color": "#4DA3FF",
       "category": "utility",
       "placement_priority": 7
