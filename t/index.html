@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Trivia Stakes challenge</title>
+<meta name="description" content="You've been challenged to a Trivia Stakes topic. Open the app or download it and beat the score.">
+<meta property="og:title" content="Trivia Stakes challenge">
+<meta property="og:description" content="Beat my score on this Trivia Stakes topic.">
+<meta property="og:image" content="https://tontechco.github.io/triviastakes-site/img/icon-512.png">
+<link rel="icon" href="https://tontechco.github.io/triviastakes-site/img/icon-512.png">
+<style>
+  :root { --navy: #0A1426; --card: #1B2438; --gold: #F2A93B; --gold-light: #FFD679; --text: #FFFFFF; --muted: #A8B0C2; --green: #22C55E; }
+  * { box-sizing: border-box; margin: 0; }
+  html, body { min-height: 100%; background: var(--navy); color: var(--text); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+  body { display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 32px 20px; background-image: radial-gradient(640px 360px at 50% -10%, rgba(242,169,59,0.22), transparent 62%); }
+  .icon { width: 96px; height: 96px; border-radius: 22px; box-shadow: 0 12px 40px rgba(0,0,0,0.45); }
+  .wordmark { margin-top: 18px; color: var(--gold); font-weight: 900; letter-spacing: 4px; font-size: 14px; text-transform: uppercase; }
+  .card { margin-top: 22px; width: 100%; max-width: 420px; background: var(--card); border: 1px solid rgba(255,255,255,0.08); border-radius: 22px; padding: 24px; text-align: center; }
+  .eyebrow { color: var(--muted); font-size: 12px; letter-spacing: 2px; text-transform: uppercase; }
+  .title { margin-top: 8px; font-size: 24px; font-weight: 800; line-height: 1.2; }
+  .score { margin-top: 18px; color: var(--gold-light); font-size: 40px; font-weight: 900; font-variant-numeric: tabular-nums; }
+  .score small { display: block; color: var(--muted); font-size: 13px; font-weight: 600; margin-top: 4px; letter-spacing: 1px; }
+  .challenge { margin-top: 16px; color: var(--text); font-size: 16px; }
+  .btn { display: block; width: 100%; max-width: 420px; margin-top: 12px; padding: 16px; border-radius: 999px; text-align: center; font-weight: 800; font-size: 15px; letter-spacing: 1px; text-decoration: none; }
+  .btn.primary { background: var(--gold); color: var(--navy); }
+  .btn.store { background: transparent; color: var(--text); border: 1.5px solid rgba(255,255,255,0.22); }
+  .hint { margin-top: 14px; color: var(--muted); font-size: 12px; text-align: center; max-width: 420px; }
+  .foot { margin-top: 28px; color: var(--muted); font-size: 12px; }
+  .foot a { color: var(--muted); }
+</style>
+</head>
+<body>
+  <img class="icon" src="https://tontechco.github.io/triviastakes-site/img/icon-512.png" alt="Trivia Stakes">
+  <div class="wordmark">Trivia Stakes</div>
+  <div class="card">
+    <div class="eyebrow" id="eyebrow">You've been challenged</div>
+    <div class="title" id="title">A custom trivia topic</div>
+    <div class="score" id="score" hidden><span id="scoreValue">0</span><small>CHIPS BANKED</small></div>
+    <div class="challenge" id="challenge">Think you can beat it? True or False, bet what you know.</div>
+  </div>
+  <a class="btn primary" id="open" href="#">Open in Trivia Stakes</a>
+  <a class="btn store" id="ios" href="https://apps.apple.com/app/id6772572727">Download on the App Store</a>
+  <a class="btn store" id="android" href="https://play.google.com/store/apps/details?id=com.tontech.triviastakes">Get it on Google Play</a>
+  <div class="hint">Already have the app? "Open in Trivia Stakes" jumps straight to this topic. After installing, come back to this page and tap it again.</div>
+  <div class="foot"><a href="https://tontechco.github.io/triviastakes-site/">triviastakes</a> · <a href="https://tontechco.github.io/triviastakes-site/privacy/">Privacy</a></div>
+<script>
+(function () {
+  // URL forms: /triviastakes-site/t/custom_<id>?t=<title>&s=<score>&by=<name>
+  //            /triviastakes-site/t/?id=custom_<id>&...
+  var q = new URLSearchParams(location.search);
+  var m = /\/t\/([^/?#]+)/.exec(location.pathname);
+  var id = (m && m[1] && m[1] !== 'index.html') ? decodeURIComponent(m[1]) : (q.get('id') || '');
+  var title = q.get('t') || '';
+  var score = parseInt(q.get('s') || '', 10);
+  var by = q.get('by') || '';
+  if (title) document.getElementById('title').textContent = title;
+  if (score > 0) {
+    document.getElementById('scoreValue').textContent = score.toLocaleString();
+    document.getElementById('score').hidden = false;
+  }
+  if (by) document.getElementById('eyebrow').textContent = by + ' challenged you';
+  if (score > 0) document.getElementById('challenge').textContent = (by || 'Your friend') + ' banked ' + score.toLocaleString() + ' chips on this topic. Beat it.';
+  document.title = (title ? title + ' · ' : '') + 'Trivia Stakes challenge';
+  var open = document.getElementById('open');
+  if (/^custom_/.test(id)) {
+    open.href = 'triviastakes://topic/' + encodeURIComponent(id);
+  } else {
+    open.href = 'triviastakes://';
+  }
+  var ua = navigator.userAgent || '';
+  if (/android/i.test(ua)) document.getElementById('ios').style.display = 'none';
+  if (/iphone|ipad|ipod/i.test(ua)) document.getElementById('android').style.display = 'none';
+})();
+</script>
+</body>
+</html>
