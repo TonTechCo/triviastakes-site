@@ -47,7 +47,8 @@
 <script>
 (function () {
   // URL forms: /triviastakes-site/t/custom_<id>?t=<title>&s=<score>&by=<name>
-  //            /triviastakes-site/t/?id=custom_<id>&...
+  //            /triviastakes-site/t/?id=custom_<id>&...            (community topic)
+  //            /triviastakes-site/t/?mode=<mode>&topic=<preset>&... (any round)
   var q = new URLSearchParams(location.search);
   var m = /\/t\/([^/?#]+)/.exec(location.pathname);
   var id = (m && m[1] && m[1] !== 'index.html') ? decodeURIComponent(m[1]) : (q.get('id') || '');
@@ -60,11 +61,18 @@
     document.getElementById('score').hidden = false;
   }
   if (by) document.getElementById('eyebrow').textContent = by + ' challenged you';
-  if (score > 0) document.getElementById('challenge').textContent = (by || 'Your friend') + ' banked ' + score.toLocaleString() + ' chips on this topic. Beat it.';
+  if (score > 0) document.getElementById('challenge').textContent = (by || 'Your friend') + ' just banked ' + score.toLocaleString() + ' chips on ' + (title || 'this round') + ' and invites you to beat it.';
   document.title = (title ? title + ' · ' : '') + 'Trivia Stakes challenge';
   var open = document.getElementById('open');
+  var mode = q.get('mode') || '';
   if (/^custom_/.test(id)) {
-    open.href = 'triviastakes://topic/' + encodeURIComponent(id);
+    open.href = 'triviastakes://t/?id=' + encodeURIComponent(id);
+  } else if (mode) {
+    // Same query the app's parser reads from the https link.
+    var app = new URLSearchParams();
+    app.set('mode', mode);
+    if (q.get('topic')) app.set('topic', q.get('topic'));
+    open.href = 'triviastakes://t/?' + app.toString();
   } else {
     open.href = 'triviastakes://';
   }
