@@ -65,7 +65,15 @@
   document.title = (title ? title + ' · ' : '') + 'Trivia Stakes challenge';
   var open = document.getElementById('open');
   var mode = q.get('mode') || '';
-  if (/^custom_/.test(id)) {
+  var match = (q.get('match') || '').toUpperCase();
+  if (/^[A-Z2-9]{6}$/.test(match)) {
+    // Multiplayer lobby invite: the app joins the match by code.
+    document.getElementById('eyebrow').textContent = (by || 'Your friend') + ' invited you to a match';
+    if (!title) document.getElementById('title').textContent = 'Join the table';
+    document.getElementById('challenge').textContent = 'Up to 10 players, ' + (q.get('n') || '10') + ' questions each, 1,000 chips each. Highest bankroll wins. Match code ' + match + '.';
+    open.href = 'triviastakes://t/?match=' + match;
+    open.textContent = 'Join in Trivia Stakes';
+  } else if (/^custom_/.test(id)) {
     open.href = 'triviastakes://t/?id=' + encodeURIComponent(id);
   } else if (mode) {
     // Same query the app's parser reads from the https link.
